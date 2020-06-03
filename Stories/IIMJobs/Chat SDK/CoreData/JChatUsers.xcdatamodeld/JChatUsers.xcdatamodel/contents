@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15508" systemVersion="19D76" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="ArchiveChatUsers" representedClassName="ArchiveChatUsers" syncable="YES" codeGenerationType="class">
+        <attribute name="channel" optional="YES" attributeType="String"/>
+        <attribute name="company" optional="YES" attributeType="String"/>
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="designation" optional="YES" attributeType="String"/>
+        <attribute name="img" optional="YES" attributeType="String"/>
+        <attribute name="isTyping" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="lastMessage" optional="YES" attributeType="String"/>
+        <attribute name="location" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="organization" optional="YES" attributeType="String"/>
+        <attribute name="selfUserId" optional="YES" attributeType="String"/>
+        <attribute name="userId" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="ChatUsers" representedClassName="ChatUsers" syncable="YES" codeGenerationType="class">
+        <attribute name="archive" optional="YES" attributeType="String"/>
+        <attribute name="channel" optional="YES" attributeType="String"/>
+        <attribute name="company" optional="YES" attributeType="String"/>
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="designation" optional="YES" attributeType="String"/>
+        <attribute name="img" optional="YES" attributeType="String"/>
+        <attribute name="isTyping" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="lastMessage" optional="YES" attributeType="String"/>
+        <attribute name="location" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="organization" optional="YES" attributeType="String"/>
+        <attribute name="selfUserId" optional="YES" attributeType="String"/>
+        <attribute name="userId" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="Company" representedClassName="Company" syncable="YES" codeGenerationType="class">
+        <attribute name="company" optional="YES" attributeType="Transformable"/>
+    </entity>
+    <entity name="UsersChannel" representedClassName="UsersChannel" syncable="YES" codeGenerationType="class">
+        <attribute name="channel" optional="YES" attributeType="String"/>
+        <relationship name="messages" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="UsersMessages" inverseName="channels" inverseEntity="UsersMessages"/>
+    </entity>
+    <entity name="UsersMessages" representedClassName="UsersMessages" syncable="YES" codeGenerationType="class">
+        <attribute name="componentId" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="html" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="insertId" optional="YES" attributeType="String"/>
+        <attribute name="isDelivered" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="isSender" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="isUnsent" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="message" optional="YES" attributeType="String"/>
+        <attribute name="messageId" optional="YES" attributeType="String"/>
+        <attribute name="metaData" optional="YES" attributeType="Transformable"/>
+        <attribute name="status" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="timeStamp" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="type" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="channels" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UsersChannel" inverseName="messages" inverseEntity="UsersChannel"/>
+    </entity>
+    <elements>
+        <element name="ArchiveChatUsers" positionX="-153" positionY="117" width="128" height="223"/>
+        <element name="ChatUsers" positionX="-264.3203125" positionY="-41.53515625" width="128" height="238"/>
+        <element name="UsersChannel" positionX="-280.21484375" positionY="218.08203125" width="128" height="73"/>
+        <element name="UsersMessages" positionX="-45" positionY="63" width="128" height="253"/>
+        <element name="Company" positionX="-135" positionY="135" width="128" height="58"/>
+    </elements>
+</model>
